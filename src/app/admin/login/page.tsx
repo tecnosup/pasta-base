@@ -23,7 +23,7 @@ export default function AdminLoginPage() {
 
     try {
       const credential = await signInWithEmailAndPassword(auth, email, password);
-      const idToken = await credential.user.getIdToken();
+      const idToken = await credential.user.getIdToken(true);
 
       const res = await fetch("/api/admin/session", {
         method: "POST",
