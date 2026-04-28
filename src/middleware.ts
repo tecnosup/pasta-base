@@ -11,7 +11,7 @@ export async function middleware(req: NextRequest) {
     }
 
     try {
-      const res = await fetch(`${req.nextUrl.origin}/api/admin/session`, {
+      const res = await fetch(`${req.nextUrl.origin}/api/auth/verify`, {
         method: "GET",
         headers: { Cookie: `base_admin_session=${session}` },
       });
